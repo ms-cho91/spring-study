@@ -28,11 +28,11 @@ public class Member {
         this.name = name;
     }
 
-    public Grade getGreae() {
+    public Grade getGrade() {
         return grade;
     }
 
-    public void setGreae(Grade grade) {
+    public void setGrade(Grade grade) {
         this.grade = grade;
     }
 }
