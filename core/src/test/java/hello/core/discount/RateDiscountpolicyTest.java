@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RateDiscountpolicyTest {
 
-    RateDiscountpolicy discountpolicy = new RateDiscountpolicy();
+    RateDiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     @Test
     @DisplayName("VIP는 10% 할인 적용 최대 할인금액은 2000원")
@@ -23,7 +23,7 @@ class RateDiscountpolicyTest {
         Member member = new Member(1L, "ms91", Grade.VIP);
 
         //when
-        int discount = discountpolicy.discount(member, 30000);
+        int discount = discountPolicy.discount(member, 30000);
 
         //then
         assertThat(discount).isEqualTo(2000);
@@ -39,7 +39,7 @@ class RateDiscountpolicyTest {
         Member member = new Member(2L, "ms91", Grade.BASIC);
 
         //when
-        int discount = discountpolicy.discount(member, 10000);
+        int discount = discountPolicy.discount(member, 10000);
 
         //then
         assertThat(discount).isEqualTo(0);
