@@ -1,15 +1,14 @@
 package hello.core.order;
 
+import hello.core.annotation.MainDiscountPolicy;
 import hello.core.discount.DiscountPolicy;
-import hello.core.discount.FixDiscountPolicy;
-import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
-import hello.core.member.MemberRepository;
-import hello.core.member.MemoryMemberRepository;
+import hello.core.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+//@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
 
@@ -24,21 +23,22 @@ public class OrderServiceImpl implements OrderService {
 //    private MemberRepository memberRepository;
 //    private DiscountPolicy discountPolicy;
 
-    private final MemberRepository memberRepository;
-    private final DiscountPolicy discountPolicy;
-
+//    수정자 주입
 //    @Autowired
 //    public void setMemberRepository(MemberRepository memberRepository) {
 //        this.memberRepository = memberRepository;
 //    }
-//
 //    @Autowired
 //    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
 //        this.discountPolicy = discountPolicy;
 //    }
 
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+//    Lombok @RequiredArgsConstructor 사용 생성자 자동
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {     //@Qualifier("mainDiscountPolicy") 매칭 가능
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }

@@ -1,9 +1,12 @@
 package hello.core.member;
 
+import hello.core.repository.MemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+//@RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService{
 
 // OCP, DIP 위반
