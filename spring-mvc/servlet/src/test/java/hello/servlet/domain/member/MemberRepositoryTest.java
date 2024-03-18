@@ -15,7 +15,7 @@ class MemberRepositoryTest {
 
     @AfterEach
     void afterEach() {
-//        memberRepository.clearStore();
+        memberRepository.clearStore();
     }
 
     @Test
@@ -31,7 +31,7 @@ class MemberRepositoryTest {
         //then
         Member findMember = memberRepository.findById(savedMember.getId());
         System.out.println("findMember = " + findMember.toString());
-        assertThat(findMember).isEqualTo(findMember);
+        assertThat(findMember).isEqualTo(savedMember);
 
     }
 
