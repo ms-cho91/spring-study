@@ -49,7 +49,9 @@ public class MappingController {
      * @PathVariable("userId") String userId -> @PathVariable String userId
      */
     @GetMapping("/mapping/{userId}")
-    public String mappingPath(@PathVariable("userId") String data){
+    public String mappingPath(
+            @PathVariable("userId") String data) {
+
         log.info("mappingPath userId={}", data);
         return "ok";
     }
@@ -58,8 +60,10 @@ public class MappingController {
      * PathVariable 사용 다중
      */
     @GetMapping("/mapping/users/{userId}/orders/{orderId}")
-    public String mappingPath(@PathVariable String userId, @PathVariable Long
-            orderId) {
+    public String mappingPath(
+            @PathVariable String userId,
+            @PathVariable Long orderId) {
+
         log.info("mappingPath userId={}, orderId={}", userId, orderId);
         return "ok";
     }
