@@ -70,8 +70,8 @@ public class ValidationItemControllerV2 {
         //특정 필드가 아닌 복합 룰 검증
         if(item.getPrice() != null && item.getQuantity() != null) {
             int resultPrice = item.getPrice() * item.getQuantity();
-            if (resultPrice < 10000) {
-                bindingResult.addError(new ObjectError("item", "가격 * 수량의 합은 10,000원 이상이여야 합니다. 현재 값 = "+ resultPrice));
+            if (resultPrice < 100000) {
+                bindingResult.addError(new ObjectError("item", "가격 * 수량의 합은 100,000원 이상이여야 합니다. 현재 값 = "+ resultPrice));
             }
         }
 
@@ -107,8 +107,8 @@ public class ValidationItemControllerV2 {
         //특정 필드가 아닌 복합 룰 검증
         if(item.getPrice() != null && item.getQuantity() != null) {
             int resultPrice = item.getPrice() * item.getQuantity();
-            if (resultPrice < 10000) {
-                bindingResult.addError(new ObjectError("item", null, null, "가격 * 수량의 합은 10,000원 이상이여야 합니다. 현재 값 = "+ resultPrice));
+            if (resultPrice < 100000) {
+                bindingResult.addError(new ObjectError("item", null, null, "가격 * 수량의 합은 100,000원 이상이여야 합니다. 현재 값 = "+ resultPrice));
             }
         }
 
@@ -147,8 +147,8 @@ public class ValidationItemControllerV2 {
         //특정 필드가 아닌 복합 룰 검증
         if(item.getPrice() != null && item.getQuantity() != null) {
             int resultPrice = item.getPrice() * item.getQuantity();
-            if (resultPrice < 10000) {
-                bindingResult.addError(new ObjectError("item", new String[]{"totalPriceMin"}, new Object[]{10000, resultPrice}, null));
+            if (resultPrice < 100000) {
+                bindingResult.addError(new ObjectError("item", new String[]{"totalPriceMin"}, new Object[]{100000, resultPrice}, null));
             }
         }
 
@@ -189,8 +189,8 @@ public class ValidationItemControllerV2 {
         //특정 필드가 아닌 복합 룰 검증
         if(item.getPrice() != null && item.getQuantity() != null) {
             int resultPrice = item.getPrice() * item.getQuantity();
-            if (resultPrice < 10000) {
-                bindingResult.reject("totalPriceMin", new Object[]{10000, resultPrice}, null);
+            if (resultPrice < 100000) {
+                bindingResult.reject("totalPriceMin", new Object[]{100000, resultPrice}, null);
             }
         }
 
