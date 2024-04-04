@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 @Slf4j
-@RestController("/api")
+@RestController()
+@RequestMapping("/api")
 public class ApiExceptionController {
 
     @GetMapping("/members/{id}")
     public MemberDto getMember(@PathVariable("id") String id) {
+
         if(id.equals("ex")) {
             throw new RuntimeException("잘못된 사용자");
         }
@@ -39,7 +41,7 @@ public class ApiExceptionController {
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "error.bad", new IllegalArgumentException());
     }
 
-    @GetMapping("/api/default-handler-ex")
+    @GetMapping("/default-handler-ex")
     public String defaultException(@RequestParam(name = "data") Integer data) {
         return "ok";
     }
