@@ -35,8 +35,14 @@ dependencies {
 
 	//mysql 데이터베이스 추가
 	runtimeOnly 'com.mysql:mysql-connector-j'
+	//H2 데이터베이스 추가
+	runtimeOnly 'com.h2database:h2'
+
 	//JdbcTemplate 추가
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+	// Mybatis 추가
+	implementation 'org.mybatis:mybatis:3.5.16'
 
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
