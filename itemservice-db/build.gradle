@@ -44,7 +44,7 @@ dependencies {
 	// Mybatis 추가
 	implementation 'org.mybatis:mybatis:3.5.16'
 
-	// JPA 추가
+	// JPA, 스프링 데이터 JPA 추가
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
 
